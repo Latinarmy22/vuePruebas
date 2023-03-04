@@ -8,16 +8,20 @@
   </head>
   <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <div id="app">{{ text }}</div>
+    <div id="app">
+        
+    </div>
     <script>
       //Toma la instancia de vue y crea una app, que recibe el id del div donde monta la app
-      Vue.createApp({
+      const vm = Vue.createApp({
         data() {
           return {
-            text: "Hola Vue",
+            img: "https://img.freepik.com/vector-gratis/rama-cafe-frutas-dibujado-mano-ilustracion_37827-1041.jpg?w=740&t=st=1677959945~exp=1677960545~hmac=8c41d45521643b43745ae848f8e88cc51451f528f3247beae73da1c31bc6ab8d"
           };
         },
+        template : `<img v-bind:src="img" v-bind:alt="img">`
       }).mount("#app");
+      console.log(vm);
     </script>
   </body>
 </html>
