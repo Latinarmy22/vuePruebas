@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba VUE</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+        
+    </div>
+    <script>
+      //Toma la instancia de vue y crea una app, que recibe el id del div donde monta la app
+      const vm = Vue.createApp({
+        data() {
+          return {
+            text: "Hola Vue"
+          };
+        },
+        methods:  {
+          input(e){
+            this.text = e.target.value
+          }
+        },
+        template : `
+        <p> {{text}} </p>
+        <input
+          type="text"
+          @:input="input"
+          :value = "text"
+        />
+        `
+      }).mount("#app");
+    </script>
+  </body>
+</html>
